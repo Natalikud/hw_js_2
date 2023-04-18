@@ -1,3 +1,4 @@
+//ДОРАБОТКА (убрать лишний массив в подсчете корзины)
 //Задание 2 (проверка работы функций в конце кода 137-179)
 //каталог товаров 
 const goods = [
@@ -105,7 +106,7 @@ function del_all() {
 
 //4-функция расчета общей сумму корзины и общего количества товаров
 function summ() {
-    totalList = [];
+    //totalList = []; убрать в доработке
     //общее количество
     function summAmount() {
         let totalAmount = [];
@@ -113,7 +114,7 @@ function summ() {
             totalAmount.push(item.amount);
         }
         var res = totalAmount.map(i=> x+=i,x=0).reverse()[0];
-        return res  
+        return res
     }
     //общая сумма
     function summPrice() {
@@ -123,15 +124,19 @@ function summ() {
                 if (good.id===item.good) {
                     var s = good.price * item.amount
                     totalSum.push(s)
+                    
                 }
             }
         }
-        var res = totalSum.map(i=> x+=i,x=0).reverse()[0];
-        return res
+        var res2 = totalSum.map(i=> x+=i,x=0).reverse()[0];
+        return res2
     }
-    //добавить полученные данные в новый массив
-    totalList.push({totalAmount: summAmount(), totalSum:  summPrice()});
-    return totalList
+    return `Количество товаров в корзине ${summAmount()} шт., общая сумма ${summPrice()} руб.`
+    
+    //return `Общее количество ${res},Общая сумма корзины ${res2}`
+    //добавить полученные данные в новый массив (УБРАТЬ В ДОРАБОТКЕ)
+    //totalList.push({totalAmount: summAmount(), totalSum:  summPrice()});
+    //return totalList
 }
 
 //проверка
@@ -177,3 +182,4 @@ console.log(summ())
 delof(2)
 console.log(basket)
 console.log(summ())
+
