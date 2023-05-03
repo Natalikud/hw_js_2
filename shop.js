@@ -131,7 +131,12 @@ function summ() {
         var res2 = totalSum.map(i=> x+=i,x=0).reverse()[0];
         return res2
     }
-    return `Количество товаров в корзине ${summAmount()} шт., общая сумма ${summPrice()} руб.`
+    let totalBasket = {
+        totalAmount: summAmount(),
+        totalSum:  summPrice()
+
+    }
+    return totalBasket
     
     //return `Общее количество ${res},Общая сумма корзины ${res2}`
     //добавить полученные данные в новый массив (УБРАТЬ В ДОРАБОТКЕ)

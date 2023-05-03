@@ -1,5 +1,6 @@
 //ДОРАБОТКА 1 задание
-
+let count = process.argv[2];
+//(например, 5 первых чисел,через командную строку по команде node index.js 5)
 function fibo(count) {
     function isNatural(number) {
         for (var i = 2; i <= number/2; i++) {
@@ -27,6 +28,6 @@ function fibo(count) {
 }
 
 //ПРОВЕРКА
-console.log(fibo(100))
-console.log(fibo(10))
-console.log(fibo(5))
+//console.log(fibo(100))
+//console.log(fibo(10))
+//console.log(fibo(5))
